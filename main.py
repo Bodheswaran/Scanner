@@ -19,10 +19,10 @@ def main():
         choice = input("Enter your choice (1-5): ")
 
         scripts = {
-            '1': 'v.py',
-            '2': 'n.py',
-            '3': 'm.py',
-            '4': 's.py'
+            '1': 'vulnerability_scanner.py',
+            '2': 'system_status.py',
+            '3': 'malware_remover.py',
+            '4': 'network_scanner.py'
         }
 
         if choice in scripts:
