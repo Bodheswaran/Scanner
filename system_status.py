@@ -1,6 +1,21 @@
-import psutil
+import subprocess
+import sys
 import platform
 from datetime import datetime
+
+# Function to install psutil if not already installed
+def install_psutil():
+    try:
+        import psutil
+        return True  # Return True if psutil is already installed
+    except ImportError:
+        print("psutil not found. Installing...")
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'psutil'])
+        return True  # Return True after installation
+
+# Import psutil after ensuring it is installed
+if install_psutil():
+    import psutil  # Import here after installation check
 
 def get_system_info():
     uname = platform.uname()
